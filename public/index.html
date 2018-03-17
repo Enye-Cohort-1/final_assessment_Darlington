@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>IQ test website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+
+  </head>
+
+    <header>
+
+    <section id="global-nav">
+		<nav>
+			<div class="constrain">
+                <button class="btn btn-primary btn-sm">Search <span class="glyphicon glyphicon-search"></span> </button>
+				<ul class="links">
+					<li><a href="https://darlingworld.com/">Play!</a></li>
+					<li class="dropdown-menu"><a href="https://contribute.enye.tech/">Contribute</a>
+                        <ul>
+							<li><a href="https://contribute.enye.tech">Questions</a></li>
+							<li><a href="https://contribute.enye.tech">Better ways</a></li>
+							<li><a href="https://contribute.enye.tech">Mentorship</a></li>
+							<li><a href="https://contribute.enye.tech">Code</a></li>
+							<li><a href="https://contribute.enye.tech">Documentation</a></li>
+							<li><a href="https://contribute.enye.tech">Web Sites</a></li>
+                        </ul>
+					</li>
+
+                    <li class="dropdown"><a href="https://js.foundation/events">Events</a>
+						<ul class="wide">
+			        	</ul>
+					</li>
+					<li class="dropdown-menu"><a href="https://enye/support/">Support</a>
+						<ul>
+							<li><a href="https://futo.edu.ng/">Learning Center</a></li>
+							<li><a href="http://darlingworld.com/">Try Advanced quize</a></li>
+							<li><a href="https://slack.com/">Slack/Chat</a></li>
+							<li><a href="https://forum.enye.tech/">Forums</a></li>
+							<li><a href="https://enye.tech/support/">Support</a></li>
+						</ul>
+					</li>
+					<li class="dropdown-menu"><a href="https://enye.foundation/">Darlingworld Foundation</a>
+						<ul>
+							<li><a href="https://enye.foundation/about/join">Join</a></li>
+							<li><a href="https://enye.foundation/about/members">Members</a></li>
+							<li><a href="https://enye.foundation/about/leadership">Leadership</a></li>
+							<li><a href="https://enye.foundation/community/code-of-conduct">Conduct</a></li>
+							<li><a class="dropdown-item" href="https://enye.foundation/about/donate">Donate</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+
+    <section class="container-fluid">
+        <h2>
+            <p>Welcome to IQ DarlingWorld!!!</p>
+
+
+        </h2>
+
+    </section>
+</header>
+
+  <body>
+    <div class="menu-top-container">
+    <nav id="main" class="constrain clearfix">
+	<ul id="menu-top" class="menu">
+<li class="menu-item current"><a href="http://enye.tech">About Darlington</a></li>
+<li class="menu-item"><a href=#>IQ Training</a></li>
+<li class="menu-item"><a href="http://blog.Darlingworld.com/">Darlingworld Blog</a></li>
+<li class="menu-item"><a href="http://bet9ja.com">Know your IQ</a></li>
+<li class="menu-item"><a href="http://www.punchonline.org">News on Enye Assessment</a></li>
+	</ul>
+    </nav>
+        </div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md offset-2s">
+    <div id="imageCarousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+				  <div class="carousel-inner" role="listbox" >
+					<div class="item active" >
+					  <img class="d-block img-fluid" src="image/darlingworldiQ.jpg" class="resposive" width="500px" height="200px"/>
+					</div>
+					<div class="item" >
+					  <img class="d-block img-fluid" src="image/darlingworldiQ2.jpg" class="resposive" width="500px" height="200px"/>>
+					</div>
+					<div class="item" >
+					  <img class="d-block img-fluid" src="image/darlingworldiQ3.png" class="resposive" width="500px" height="200px"/>>
+					</div>
+				  </div>
+
+        </div>
+        </div>
+    </div>
+      </div>
+
+
+     <div class="jumbotron" style="margin-bottom: 0px; center">
+			<h2 class="quizHeader " >IQ test to blow your mind!</h2>
+         <div class="menu-top-container">
+		   <div class="row">
+			   <div class="col-md-6">
+
+
+        <script>
+    // Here is the function that takes in answeres then loops over the answere options saves the correct option and then convert the saved option to number ==
+        function submitAnswers() {
+
+		function answerScore (ques) {
+			var options = document.getElementsByName(ques);
+			for (var i = 0, length = options.length; i < length; i++) {
+   				if (options[i].checked) {
+					var ans = Number(options[i].value);
+				}
+			}
+			if (isNaN(ans)) {
+			 ans = 0;
+			}
+			return ans;
+		}
+
+	// Here we calculate the total value=====================
+		var scoreCompute = (answerScore('Q1') + answerScore('Q2') + answerScore('Q3') + answerScore('Q4') + answerScore('Q5') + answerScore('Q6'));
+
+
+// This function takes care of displaying the correct answer ===============
+		function correctAns (correctNo, quesNumber) {
+			console.log("quesNumber: " + quesNumber);
+			return ("No " + quesNumber + " correct answer is " + ": &nbsp;<b>" +
+				(document.getElementById(correctNo).innerHTML) + "</b>");
+			}
+
+		if (answerScore('Q1') === 0) {
+			document.getElementById('correctAns1').innerHTML = correctAns('correct', 1);
+		}
+		if (answerScore('Q2') === 0) {
+			document.getElementById('correctAns2').innerHTML = correctAns('correct1', 2);
+		}
+		if (answerScore('Q3') === 0) {
+			document.getElementById('correctAns3').innerHTML = correctAns('correct2', 3);
+		}
+		if (answerScore('Q4') === 0) {
+			document.getElementById('correctAns4').innerHTML = correctAns('correct3', 4);
+		}
+        if (answerScore('Q5') === 0) {
+			document.getElementById('correctAns5').innerHTML = correctAns('correct4', 5);
+		}
+        if (answerScore('Q6') === 0) {
+			document.getElementById('correctAns6').innerHTML = correctAns('correct5', 6);
+		}
+
+		var queCountArr = document.getElementsByClassName('question');
+		var queCounter = 0;
+		for (var i = 0, length = queCountArr.length; i < length; i++) {
+			queCounter++;
+		}
+
+	// comment and scores =============================================================
+		var showScore = "Score: " + scoreCompute +"/" + queCounter;
+		if (scoreCompute === queCounter) {
+			showScore = showScore + "&nbsp; <i> You are a Guinus </i>"
+		};
+        if (scoreCompute === queCounter -1) {
+			showScore = showScore + "&nbsp; <i> You a brainiac </i>"
+		};
+        if (scoreCompute === queCounter -2) {
+			showScore = showScore + "&nbsp; <i> You are Intelligent </i>"
+		};
+        if (scoreCompute === queCounter -3) {
+			showScore = showScore + "&nbsp; <i> You are Average </i>"
+		};
+        if (scoreCompute === queCounter -4) {
+			showScore = showScore + "&nbsp; <i> You are below average </i>"
+		};
+        if (scoreCompute === queCounter -5) {
+			showScore = showScore + "&nbsp; <i> You are Dull </i>"
+		};
+        if (scoreCompute === queCounter -6) {
+			showScore = showScore + "&nbsp; <i> Sorry to say this, you are a moron </i>"
+		};
+		document.getElementById('totalScore').innerHTML = showScore;
+	}
+
+$(document).ready(function() {
+
+	$('#submitButton').click(function() {
+		$(this).addClass('hide');
+	});
+
+});
+        </script>
+
+
+        <form class="container">
+
+	  	<div>
+	  		<p class="question"><b>1. At a conference, 12 members shook hands with each other before and after the meeting. How many total number of hand shakes occurred?</b></p>
+	    	<input class="answer" type="radio" name="Q1" value="1">
+	        <label id="correct">132</label>
+	    	<br>
+	        <input class="answer" type="radio" name="Q1" value="0">
+	        <label>145</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q1" value="0">
+	        <label>100</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q1" value="0">
+	        <label>135</label>
+	  	</div>
+               <br>
+
+	  	<div>
+	  		<p class="question"><b>2. The day after the day after tomorrow is four days before Monday. What day is it today??</b></p>
+	        <input class="answer" type="radio" name="Q2" value="0">
+	        <label>Saturday</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q2" value="1">
+	        <label id="correct1">Monday</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q2" value="0">
+	        <label>Tuesday</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q2" value="0">
+	        <label>Friday</label>
+	  	</div>
+
+           <br>
+
+	  	<div>
+	  		<p class="question"><b>3.  6121135 is to flame as 21215120 is to ?</b></p>
+	        <input class="answer" type="radio" name="Q3" value="0">
+	        <label>castle</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q3" value="0">
+	        <label>voice</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q3" value="1">
+	        <label id="correct2">bloat</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q3" value="0">
+	        <label>Yatch</label>
+	   </div>
+
+	   <br>
+
+	  	<div>
+	  		<p class="question"><b>4. Forest is to tree as tree is to ?</b></p>
+	        <input class="answer" type="radio" name="Q4" value="0">
+	        <label>mangrove</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q4" value="0">
+	        <label>plant</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q4" value="0">
+	        <label>branch</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q4" value="1">
+	        <label id="correct3">leaf</label>
+	  	</div>
+
+            <div>
+	  		<p class="question">5. A fisherman has 5 fishes (namely A, B, C,D, E) each having a different weight.
+                    <ul class="ArticleAlpha">
+								<li>(i)  A weighs twice as much as B.</li>
+								<li>(ii) B weighs four and a half times as much as C.</li>
+								<li>(iii)C weighs half as much as D.</li>
+								<li>(iv) D weighs half as much as E.</li>
+								<li>(v)  E weighs less than A but more than C.</li>
+							</ul>
+
+            <p>Which of the following is the lightest?</p>
+            <!--options-->
+	    	<input class="answer" type="radio" name="Q5" value="0">
+	        <label>A</label>
+	    	<br>
+	        <input class="answer" type="radio" name="Q5" value="0">
+	        <label>B</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q5" value="1">
+	        <label id="correct4">C</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q5" value="0">
+	        <label>D</label>
+            <br>
+	        <input class="answer" type="radio" name="Q5" value="0">
+	        <label>E</label>
+	  	</div>
+               <br>
+        	<div>
+	  		<p class="question"><b>6. In the above problem,
+            E is lighter in weight than which of the following pairs?</b></p>
+	    	<input class="answer" type="radio" name="Q6" value="0">
+	        <label>B,D</label>
+	    	<br>
+	        <input class="answer" type="radio" name="Q6" value="1">
+	        <label id="correct5">A,B</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q6" value="0">
+	        <label>D,C</label>
+	        <br>
+	        <input class="answer" type="radio" name="Q6" value="0">
+	        <label>A,D</label>
+	  	</div>
+
+
+    </form>
+      </div>
+      <div class="bottom">
+      <footer class="text-center">
+  <div class="submit">
+          <input type="submit" class="btn btn-danger" id="submitbutton" onClick="submitAnswers()"
+           value="Submit answers">
+    </div>
+  </footer>
+</div>
+<!-- This creates a grid where the correct answers and score are shown-->
+    <div class="row">
+        <div class="col-sm-6">
+    <div class="queAnswers" id="correctAns1"></div>
+    <div class="queAnswers" id="correctAns2"></div>
+    <div class="queAnswers" id="correctAns3"></div>
+    <div class="queAnswers" id="correctAns4"></div>
+    <div class="queAnswers" id="correctAns5"></div>
+    <div class="queAnswers" id="correctAns6"></div>
+        </div>
+    <div>
+    	<b><i class="Qscore" id="totalScore"></i></b>
+    </div>
+	</div>
+             </div>
+         </div>
+      </div>
+
+    <br /><br />
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="aquestionymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="aquestionymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="aquestionymous"></script>
+	  <script src="js/jscript.js"></script>
+
+
+
+    <footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3><span>Become a Better Programmer</span></h3>
+				<ul class="books">
+					<li>
+						<a href="http://ouopentextbooks.org/blog/computer-science-oer-authors-and-oreilly-media/">
+							<img src=" image/think.jpg" alt="Learning programming" width="92" height="114">
+							This one off me
+							<cite> Cody Taylor</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.topfreebooks.org/eloquent-javascript-second-edition/">
+							<img src="image/download.jpg" alt="javasc in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa" width="92" height="114">
+							javascript all the way
+							<cite>Bear Bibeault, Yehuda Katz, and Aurelio De Rosa</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.amazon.com/Bootstrap-Cookbook-Solutions-problems-Responsive/dp/178588929X">
+							<img src="image/bootstap.jpg" alt="Learn how to become a better programmer" width="92" height="114">
+							Bootstrap understanding
+							<cite>Cody Lindley</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+        </div>
+</footer>
+
+    <footer>
+    <div id="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="http:www.enye.tech">Learning Center</a></li>
+			<li><a class="icon-group" href="http:www.enye.tech">Forum</a></li>
+			<li><a class="icon-wrench" href="http:www.futo.edu.ng">FUTO</a></li>
+			<li><a class="icon-twitter" href="http:www.enye.tech">Twitter</a></li>
+			<li><a class="icon-comments" href="http:www.enye.tech">Students</a></li>
+			<li><a class="icon-github" href="http:www.enye.tech">GitHub</a></li>
+	</ul>
+
+    <p class="copyright">
+		Copyright 2018 <a href="http:www.enye.tech">The DarlingWorld Foundation</a>.
+		<a href="http:www.enye.tech">Enye License</a>
+		<span class="sponsor-line"><a href='#'>Web hosting by Enye world</a> | <a href="#" rel="nofollow" class="sp-link">Designed by DARLINGTON</a></span>
+	</p>
+</div>
+  </footer>
+  </body>
+</html>
