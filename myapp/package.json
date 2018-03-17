@@ -1,0 +1,16 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "main": "iqwebsite.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "epress": "0.0.1-security",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}
